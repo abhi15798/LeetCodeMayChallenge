@@ -1,0 +1,25 @@
+class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int count=0,count1=0;
+        char[] magazineChars = magazine.toCharArray();
+        for(char c:ransomNote.toCharArray())
+        {    count1=count;
+             int i=0;
+            for(char x:magazineChars)
+            { 
+                if(c==x)
+                {
+                   count++;
+                   magazineChars[i]='0';
+                    break;
+                }
+                i++;
+            }
+            if(count1==count)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
